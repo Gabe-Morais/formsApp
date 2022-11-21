@@ -22,3 +22,21 @@
     font-size: small;
     color: red;  
   }
+
+  ion-label{
+    font-style: bold;
+}
+
+
+.teste {
+  border-radius: 5px;
+  --background: #6157c9;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

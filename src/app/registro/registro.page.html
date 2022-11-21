@@ -1,10 +1,5 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title class="titulo">Registro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content color="dark">
+  <img src="../../assets/icon/register.jpg" alt="">
   <ion-card class="card">
     <form [formGroup]="registerForm">
       <ion-item color="medium">
@@ -60,24 +55,8 @@
     </form>
     <ion-row>
       <ion-col size="12">
-        <ion-button color="tertiary" shape="round" expand="block">Registrar</ion-button>
+        <ion-button color="tertiary" expand="block" (click)="salvar()" >Registrar</ion-button>
       </ion-col>
-    </ion-row>
-
-    <ion-row>
-
-      <ion-col size="6">
-        <ion-button color="tertiary" shape="round" expand="full">
-          <ion-icon name="arrow-undo"></ion-icon>Voltar
-        </ion-button>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-button color="tertiary" shape="round" expand="full">
-          <ion-icon name="trash-sharp"></ion-icon>Limpar
-        </ion-button>
-      </ion-col>
-
     </ion-row>
 
   </ion-card>

@@ -3,6 +3,23 @@
 
 /** Ionic CSS Variables **/
 :root {
+      /*rozu*/
+      --ion-color-prezu: #14103d;
+      --ion-color-prezu-rgb: 20,16,61;
+      --ion-color-prezu-contrast: #ffffff;
+      --ion-color-prezu-contrast-rgb: 255,255,255;
+      --ion-color-prezu-shade: #120e36;
+      --ion-color-prezu-tint: #2c2850;
+  
+       /** prezu **/
+    --ion-color-prezu: #0a0821;
+    --ion-color-prezu-rgb: 10,8,33;
+    --ion-color-prezu-contrast: #ffffff;
+    --ion-color-prezu-contrast-rgb: 255,255,255;
+    --ion-color-prezu-shade: #09071d;
+    --ion-color-prezu-tint: #232137;
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -232,5 +249,22 @@
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
+  }
+  .ion-color-prezu {
+    --ion-color-base: var(--ion-color-prezu);
+    --ion-color-base-rgb: var(--ion-color-prezu-rgb);
+    --ion-color-contrast: var(--ion-color-prezu-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-prezu-contrast-rgb);
+    --ion-color-shade: var(--ion-color-prezu-shade);
+    --ion-color-tint: var(--ion-color-prezu-tint);
+  }
+  
+  .ion-color-rozu {
+    --ion-color-base: var(--ion-color-rozu);
+    --ion-color-base-rgb: var(--ion-color-rozu-rgb);
+    --ion-color-contrast: var(--ion-color-rozu-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-rozu-contrast-rgb);
+    --ion-color-shade: var(--ion-color-rozu-shade);
+    --ion-color-tint: var(--ion-color-rozu-tint);
   }
 }
