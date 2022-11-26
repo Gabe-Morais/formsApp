@@ -48,6 +48,5 @@ export class LoginPage implements OnInit {
 
     } else { alert('Formulário Invalido') }
   }
-
-
 }
+

@@ -16,7 +16,7 @@ export class UsuarioService {
   constructor(private storageService: StorageService) { }
 
   async login(email: string, senha: string) {
-    this.buscarTodos();
+    await this.buscarTodos();
     let usuario: Usuario;
     this.listaUsuarios.filter(item => {
       if (item.email.toLocaleLowerCase() == email.toLocaleLowerCase()) { }
@@ -31,22 +31,30 @@ export class UsuarioService {
 
   //salvar usurio dentro da lista de usuarios.
   async salvar(usuario: Usuario) {
+    await this.buscarTodos();
     this.listaUsuarios[usuario.id] = usuario;
     await this.storageService.set('usuarios', this.listaUsuarios);
   }
 
-  async buscarUm() { }
+  async buscarUm(id:number) {
+    await this.buscarTodos();
+    await this.listaUsuarios[id];
+   }
 
   // "listaUsuarios recebe a busca por "usuarios" / "as unknown as Usuario[]" caso nao tenho nd retorne vazio ou o usuario "
   async buscarTodos() {
-    this.listaUsuarios = await this.storageService.get('usuarios') as unknown as Usuario[];
+    this.listaUsuarios = await this.storageService.get('usuarios') as null as Usuario[];
     if (!this.listaUsuarios) {
-      return [];
+      this.listaUsuarios = [];
     }
     return this.listaUsuarios;
   }
 
-  async deletar() { }
+  async deletar(id: number) { 
+    await this.buscarTodos(); // atualiza a lista de usuarios
+    this.listaUsuarios.slice(id, 1); //remove o usuario do array
+    await this.storageService.set('usuarios', this.listaUsuarios)//salva o array
+  }
 
   // Armazenamos o idUsuario 
   async salvarId(id: number) {

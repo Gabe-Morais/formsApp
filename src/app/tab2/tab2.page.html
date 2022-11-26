@@ -1,17 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="wrapper" color="prezu">
+    <ion-card-header>
+      <ion-card-subtitle>Cadastro de Produto</ion-card-subtitle>
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-item color="prezu">
+      <ion-label>Nome</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item color="prezu">
+      <ion-label>Descrição</ion-label>
+      <ion-textarea placeholder="Informe a descrição do produto" [clearOnEdit]="true">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item color="prezu">
+      <ion-label>Data de Validade</ion-label>
+      <ion-input ></ion-input>
+    </ion-item>
+
+    <ion-item color="prezu">
+      <ion-label>Valor</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+  </ion-card>
 </ion-content>

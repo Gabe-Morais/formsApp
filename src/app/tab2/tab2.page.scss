@@ -1,0 +1,24 @@
+ion-icon{
+    font-size: 30px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper ion-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 99999;
+}
+
+.wrapper ion-card-header{
+    display: flex;
+}
+
+ion-card{
+    --background:#0a0821;
+}
