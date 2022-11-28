@@ -39,7 +39,7 @@ export class UsuarioService {
     await this.listaUsuarios[id];
    }
 
-  // "listaUsuarios recebe a busca por "usuarios" / "as unknown as Usuario[]" caso não tenho nada, retorne vazio ou o usuario "
+  // caso não tenho nada, retorna null ou o usuario 
   async buscarTodos() {
     this.listaUsuarios = await this.storageService.get('usuarios') as null as Usuario[];
     if (!this.listaUsuarios) {
