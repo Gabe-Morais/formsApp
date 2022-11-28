@@ -8,11 +8,9 @@ import { StorageService } from './storage.service';
 })
 export class UsuarioService {
 
-  listaUsuarios: Usuario[] = [
+  listaUsuarios: Usuario[] = [];
 
-  ];
-
-  // Sempre declarar o servico no construtor "variavel: NomeDaClasse"
+  // Lembrar de sempre declarar o servico no construtor "variavel: NomeDaClasse"
   constructor(private storageService: StorageService) { }
 
   async login(email: string, senha: string) {
@@ -41,7 +39,7 @@ export class UsuarioService {
     await this.listaUsuarios[id];
    }
 
-  // "listaUsuarios recebe a busca por "usuarios" / "as unknown as Usuario[]" caso nao tenho nd retorne vazio ou o usuario "
+  // "listaUsuarios recebe a busca por "usuarios" / "as unknown as Usuario[]" caso não tenho nada, retorne vazio ou o usuario "
   async buscarTodos() {
     this.listaUsuarios = await this.storageService.get('usuarios') as null as Usuario[];
     if (!this.listaUsuarios) {
@@ -51,16 +49,16 @@ export class UsuarioService {
   }
 
   async deletar(id: number) { 
-    await this.buscarTodos(); // atualiza a lista de usuarios
+    await this.buscarTodos(); // atualiza a lista de usuarios armazenados
     this.listaUsuarios.slice(id, 1); //remove o usuario do array
-    await this.storageService.set('usuarios', this.listaUsuarios)//salva o array
+    await this.storageService.set('usuarios', this.listaUsuarios)//salva
   }
 
-  // Armazenamos o idUsuario 
+  // Salva o Usuario
   async salvarId(id: number) {
     await this.storageService.set('idUsuario', id);
   }
-  //armazenamos nossa busca dentro de uma constante, e aplicamos uma condição para caso o id exista nos retorne ele.
+  //Criando uma função para realizar a busca de um id, e caso ele existe retorne os dados do mesmo.
   async buscarId() {
     const id = await this.storageService.get('idUsuario');
     if (!id) {

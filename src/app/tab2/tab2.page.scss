@@ -15,10 +15,16 @@ ion-icon{
     z-index: 99999;
 }
 
+
 .wrapper ion-card-header{
     display: flex;
 }
 
 ion-card{
     --background:#0a0821;
+}
+
+.produto-img{
+    max-width: 100px;
+    max-height: 100px;
 }

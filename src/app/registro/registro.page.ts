@@ -24,34 +24,34 @@ export class RegistroPage implements OnInit {
 
   mensagensErro = {
     nome: [{tipo: 'required', aviso: 'O campo não pode estar vazio'}],
-    email: [{tipo: 'required', aviso: 'O campo não pode estar vazio'}, {tipo: 'email', aviso: 'Digite um e-mail válido'}],
-    cpf: [{tipo: 'required', aviso: 'O campo não pode estar vazio'}, {tipo: 'minlength', aviso: 'O campo deve conter 11 dígitos'}, {tipo: 'maxlength', aviso: 'O campo deve conter 11 dígitos'}],
-    senha: [{tipo: 'required', aviso: 'O campo não pode estar vazio'}, {tipo: 'minlength', aviso: 'O campo deve ter no mínimo 6 dígitos'}],
-    confirmeSenha: [{tipo: 'required', aviso: 'O campo não pode estar vazio'}, {tipo: 'minlength', aviso: 'O campo deve ter no mínimo 6 dígitos'}],
+    email: [{tipo: 'required', aviso: 'O campo não pode estar vazio'}, {tipo: 'email', aviso: 'E-mail inválido'}],
+    cpf: [{tipo: 'required', aviso: 'O CPF não pode estar vazio'}, {tipo: 'minlength', aviso: 'Número de CPF inválido!'}, {tipo: 'maxlength', aviso: 'Número de CPF inválido!'}],
+    senha: [{tipo: 'required', aviso: 'A senha não pode estar vazia'}, {tipo: 'minlength', aviso: 'A senha deve ter no mínimo 6 dígitos'}],
+    confirmeSenha: [{tipo: 'required', aviso: 'A senha não pode estar vazia'}, {tipo: 'minlength', aviso: 'A senha deve ter no mínimo 6 dígitos'}],
   };
   pessoa = {};
 
   constructor(private formBuilder: FormBuilder, private bd: StorageService, private usuarioService:UsuarioService, private route:Router) { }
 
-  get nome(){
-    return this.registerForm.get('nome');
-  }
+    get nome(){
+      return this.registerForm.get('nome');
+    }
 
-  get email(){
-    return this.registerForm.get('email');
-  }
+    get email(){
+      return this.registerForm.get('email');
+    }
+    q
+    get cpf(){
+      return this.registerForm.get('cpf');
+    }
 
-  get cpf(){
-    return this.registerForm.get('cpf');
-  }
+    get senha(){
+      return this.registerForm.get('senha');
+    }
 
-  get senha(){
-    return this.registerForm.get('senha');
-  }
-
-  get confirmeSenha(){
-    return this.registerForm.get('confirmeSenha');
-  }
+    get confirmeSenha(){
+      return this.registerForm.get('confirmeSenha');
+    }
 
   ngOnInit() {
   }
